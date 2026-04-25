@@ -1,0 +1,16 @@
+id: t1123-audio-capture
+name: T1123 Audio Capture Setup
+description: Creates audio capture simulation with MCI API for T1123 collection exercise
+tactic: collection
+technique_id: T1123
+technique_name: Audio Capture
+sub_technique: ""
+tag: "mitre"
+executors:
+  - name: psh
+    platform: windows
+    command: |
+      if (-not (Test-Path "C:\Temp\COL-challenges")) { git clone https://github.com/hacktifytechnologies/Collection "C:\Temp\COL-challenges" } else { git -C "C:\Temp\COL-challenges" pull --quiet }
+      powershell -ExecutionPolicy Bypass -File "C:\Temp\COL-challenges\T1123-Audio_Capture\setup.ps1"
+    payloads: []
+    parsers: []
