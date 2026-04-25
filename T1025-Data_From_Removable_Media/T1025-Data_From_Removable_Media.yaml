@@ -1,0 +1,16 @@
+id: t1025-data-from-removable-media
+name: T1025 Data from Removable Media Setup
+description: Creates simulated USB with sensitive data for T1025 removable media collection
+tactic: collection
+technique_id: T1025
+technique_name: Data from Removable Media
+sub_technique: ""
+tag: "mitre"
+executors:
+  - name: psh
+    platform: windows
+    command: |
+      if (-not (Test-Path "C:\Temp\COL-challenges")) { git clone https://github.com/hacktifytechnologies/Collection "C:\Temp\COL-challenges" } else { git -C "C:\Temp\COL-challenges" pull --quiet }
+      powershell -ExecutionPolicy Bypass -File "C:\Temp\COL-challenges\T1025-Data_From_Removable_Media\setup.ps1"
+    payloads: []
+    parsers: []
