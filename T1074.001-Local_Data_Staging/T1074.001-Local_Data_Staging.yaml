@@ -1,0 +1,16 @@
+id: t1074-001-local-data-staging
+name: T1074.001 Local Data Staging Setup
+description: Creates loot source and staging area for T1074.001 staging exercise
+tactic: collection
+technique_id: T1074
+technique_name: Data Staged
+sub_technique: "Local Data Staging"
+tag: "mitre"
+executors:
+  - name: sh
+    platform: linux
+    command: |
+      git clone https://github.com/hacktifytechnologies/Collection /tmp/COL-challenges 2>/dev/null || git -C /tmp/COL-challenges pull --quiet
+      bash /tmp/COL-challenges/T1074.001-Local_Data_Staging/setup.sh
+    payloads: []
+    parsers: []
