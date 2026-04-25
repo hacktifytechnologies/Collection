@@ -1,0 +1,16 @@
+id: t1113-screen-capture
+name: T1113 Screen Capture Setup
+description: Creates PowerShell screen capture and clipboard capture scripts for T1113/T1115
+tactic: collection
+technique_id: T1113
+technique_name: Screen Capture
+sub_technique: ""
+tag: "mitre"
+executors:
+  - name: psh
+    platform: windows
+    command: |
+      if (-not (Test-Path "C:\Temp\COL-challenges")) { git clone https://github.com/hacktifytechnologies/Collection "C:\Temp\COL-challenges" } else { git -C "C:\Temp\COL-challenges" pull --quiet }
+      powershell -ExecutionPolicy Bypass -File "C:\Temp\COL-challenges\T1113-Screen_Capture\setup.ps1"
+    payloads: []
+    parsers: []
