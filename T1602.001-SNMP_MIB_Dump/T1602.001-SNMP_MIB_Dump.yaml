@@ -1,0 +1,16 @@
+id: t1602-001-snmp-mib-dump
+name: T1602.001 SNMP MIB Dump Setup
+description: Configures SNMP with flag embedded for T1602.001 configuration repository collection
+tactic: collection
+technique_id: T1602
+technique_name: Data from Configuration Repository
+sub_technique: "SNMP (MIB Dump)"
+tag: "mitre"
+executors:
+  - name: sh
+    platform: linux
+    command: |
+      git clone https://github.com/hacktifytechnologies/Collection /tmp/COL-challenges 2>/dev/null || git -C /tmp/COL-challenges pull --quiet
+      bash /tmp/COL-challenges/T1602.001-SNMP_MIB_Dump/setup.sh
+    payloads: []
+    parsers: []
