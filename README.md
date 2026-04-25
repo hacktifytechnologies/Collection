@@ -14,4 +14,4 @@
 | 10 | T1123-Audio_Capture | T1123 Audio Capture | Windows | Expert |
 
 ## Credentials: Linux `player/Player@123` | Windows `player/Player@123!`
-## Flag: `HACKTIFY{TECHNIQUE_DESCRIPTION_<hash/hostname>}`
+
